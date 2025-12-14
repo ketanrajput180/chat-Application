@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import { SocketProvider } from "./SocketContext.jsx";
 
-export const serverUrl = "http://localhost:8000";
+export const serverUrl = "https://chatapp-backend-zp27.onrender.com";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
