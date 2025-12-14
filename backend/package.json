@@ -6,7 +6,8 @@
   "author": "ketan",
   "type": "module",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "dependencies": {
