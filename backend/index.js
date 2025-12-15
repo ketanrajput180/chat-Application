@@ -26,11 +26,27 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/message", messageRouter);
 
+// ✅ ✅ ✅ ADD THESE 2 ROUTES ✅ ✅ ✅
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "Chat App Backend API is Live! ✅", 
+    timestamp: new Date(),
+    endpoints: ["/api/auth", "/api/user", "/api/message", "/health"]
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.json({ 
+    status: "healthy", 
+    service: "chat-app-backend",
+    timestamp: new Date() 
+  });
+});
+
 // Connect DB & start server
 connectDB()
   .then(() => {
     server.listen(port, () => {
-      
       console.log(`✅ Server running on port ${port}`);
     });
   })
